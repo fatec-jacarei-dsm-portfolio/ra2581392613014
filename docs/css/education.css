@@ -1,0 +1,40 @@
+.timeline {
+  position: relative;
+  padding-inline-start: 2rem;
+  border-inline-start: 1px solid var(--border);
+  display: grid;
+  gap: 2.5rem;
+}
+.timeline-item { position: relative; }
+.timeline-dot {
+  position: absolute;
+  inset-inline-start: calc(-2rem - 6px);
+  top: 6px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+.timeline-period {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+.timeline-title { font-size: 1.15rem; margin: 0.35rem 0 0.25rem; }
+.timeline-org { color: var(--text-muted); margin: 0; font-size: 0.95rem; }
+
+.subsection-title {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  color: var(--heading);
+  margin: 3rem 0 1.75rem;
+}
+.subsection-title .prompt {
+  display: inline-flex;
+  align-items: center;
+}
+.subsection-title .prompt svg {
+  width: 1.05em;
+  height: 1.05em;
+}

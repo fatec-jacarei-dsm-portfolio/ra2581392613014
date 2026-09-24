@@ -1,11 +1,158 @@
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfólio - VITOR OTAVIO DOS REIS</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Vitor Otavio dos Reis — Desenvolvedor Full Stack. Projetos, formação acadêmica, habilidades e contato." />
+  <title>Vitor Otavio dos Reis — Desenvolvedor Full Stack</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d1117'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%2300d9ff' text-anchor='middle'%3EVR%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="module" src="src/script.js"></script>
 </head>
+
 <body>
-    <h1>Bem vindo ao Portfólio de VITOR OTAVIO DOS REIS</h1>
+  <a href="index.html" class="skip-link">Pular para o conteúdo</a>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <header class="header">
+    <nav class="navbar" aria-label="Navegação principal">
+      <a href="#hero" class="logo" aria-label="Ir para o topo">
+        <span class="logo-prompt"></span> Vitor<span class="logo-accent"> Reis</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false"
+        aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="#projetos" class="nav-link">Projetos</a></li>
+        <li><a href="#formacao" class="nav-link">Formação</a></li>
+        <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+        <li><a href="#contato" class="nav-link">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-inner reveal">
+        <div class="hero-avatar">
+          <div class="hero-avatar-placeholder" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </div>
+        </div>
+        <div class="hero-text">
+          <p class="hero-greeting"><span class="prompt">&gt;</span> Olá, meu nome é</p>
+          <h1 class="hero-name">
+            <span id="typed"></span><span class="cursor" aria-hidden="true">_</span>
+          </h1>
+          <h2 class="hero-role" id="hero-role"></h2>
+          <p class="hero-tagline" id="hero-tagline"></p>
+
+          <div class="hero-cta">
+            <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+            <a href="#contato" class="btn btn-ghost">Contato</a>
+          </div>
+
+          <ul class="hero-socials" id="hero-socials" role="list" aria-label="Redes sociais"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="section-head reveal">
+        <h2 class="section-title"><span class="section-index">01.</span> Sobre mim</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+      </div>
+      <div class="about-grid reveal" id="about-content"></div>
+    </section>
+
+    <section id="projetos" class="section">
+      <div class="section-head reveal">
+        <h2 class="section-title"><span class="section-index">02.</span> Projetos</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+        <div class="project-filters" id="project-filters">
+          <button class="pill active" data-filter="todos">Todos</button>
+          <button class="pill" data-filter="academico">Acadêmicos</button>
+          <button class="pill" data-filter="pessoal">Pessoais</button>
+        </div>
+      </div>
+      <div class="projects-grid" id="projects-grid"></div>
+    </section>
+
+    <section id="formacao" class="section">
+      <div class="section-head reveal">
+        <h2 class="section-title"><span class="section-index">03.</span> Formação acadêmica</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+      </div>
+      <h3 class="subsection-title reveal">
+        <span class="prompt" id="education-icon" aria-hidden="true"></span>
+        Educação
+      </h3>
+      <ol class="timeline" id="education-timeline" role="list"></ol>
+      <h3 class="subsection-title reveal">
+        <span class="prompt" id="certification-icon" aria-hidden="true"></span>
+        Certificações
+      </h3>
+      <ol class="timeline" id="certifications-timeline" role="list"></ol>
+    </section>
+
+    <section id="habilidades" class="section">
+      <div class="section-head reveal">
+        <h2 class="section-title"><span class="section-index">04.</span> Habilidades</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+      </div>
+      <div class="skills-grid" id="skills-grid"></div>
+      <div class="learning reveal">
+        <h3 class="learning-title"><span class="prompt">$</span> Atualmente estudando</h3>
+        <ul class="badges badges-learning" id="learning-list" role="list" aria-label="Tecnologias em aprendizado"></ul>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <div class="section-head reveal">
+        <h2 class="section-title"><span class="section-index">05.</span> Contato</h2>
+        <span class="section-rule" aria-hidden="true"></span>
+      </div>
+
+      <div class="contact-grid">
+        <div class="card reveal" id="contact-info"></div>
+        <div class="card reveal">
+          <h3 class="contact-card-title">Envie uma mensagem</h3>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <label for="nome">Nome</label>
+              <input type="text" id="nome" name="nome" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+            <div class="form-row">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+            <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <ul class="footer-socials" id="footer-socials" role="list" aria-label="Redes sociais"></ul>
+    <p class="footer-copy">
+      &copy; <span id="year"></span> Vitor Otavio. Todos os direitos reservados.
+    </p>
+    <a href="#hero" class="back-to-top" aria-label="Voltar ao topo">↑ topo</a>
+  </footer>
+
 </body>
 </html>
